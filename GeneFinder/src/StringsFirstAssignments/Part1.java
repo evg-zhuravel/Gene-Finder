@@ -16,6 +16,11 @@ public class Part1 {
     }
 
     public static String findSimpleGene(String dna, String startCodon, String lastCodon) {
+        if (Character.isLowerCase(dna.charAt(0))) {
+            startCodon = startCodon.toLowerCase();
+            lastCodon = lastCodon.toLowerCase();
+        }
+
         int startCodonIndex;
         if ((startCodonIndex = dna.indexOf(startCodon)) == -1) {
             return "";
