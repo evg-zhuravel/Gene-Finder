@@ -14,7 +14,7 @@ public class Part2 {
     public static String lastPart(String stringa, String stringb) {
         if (stringb.contains(stringa)) {
             int stringAIndex = stringb.indexOf(stringa);
-            return stringb.substring(stringAIndex, stringAIndex + stringa.length() + 1);
+            stringb = stringb.substring(stringAIndex, stringAIndex + stringa.length() + 1);
         }
         return stringb;
     }

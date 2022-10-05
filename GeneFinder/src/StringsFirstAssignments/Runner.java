@@ -16,6 +16,8 @@ public class Runner {
         System.out.println(Part1.findSimpleGene(notMultipleOfThreeWithAtgAndTaa));
         System.out.println(Part1.findSimpleGene(random));
 
+        System.out.println("TEST TASK:" + Part1.findSimpleGene("AAATGCCCTAACTAGATTAAGAAACC"));
+
         System.out.println();
 
         System.out.println("Testing of twoOccurrences() method:");
