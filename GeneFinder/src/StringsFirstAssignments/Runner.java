@@ -23,5 +23,14 @@ public class Runner {
         System.out.println(Part2.twoOccurrences("by", "Story by Abby Long"));
         System.out.println(Part2.twoOccurrences("a", "banana"));
         System.out.println(Part2.twoOccurrences("atg", "ctgtatgta"));
+
+        System.out.println();
+
+        System.out.println("Testing of lastPart() method:");
+
+        System.out.println(Part2.lastPart("an", "banana"));
+        System.out.println(Part2.lastPart("zoo", "forest"));
+        System.out.println(Part2.lastPart("atg", "ctgtatgZta"));
+        System.out.println(Part2.lastPart("mia", "MiAmIamiaA"));
     }
 }
