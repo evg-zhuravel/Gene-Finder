@@ -14,7 +14,6 @@ public class Part1 {
         }
         return "";
     }
-
     public static String findSimpleGene(String dna, String startCodon, String lastCodon) {
         if (Character.isLowerCase(dna.charAt(0))) {
             startCodon = startCodon.toLowerCase();

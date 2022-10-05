@@ -15,5 +15,13 @@ public class Runner {
         System.out.println(Part1.findSimpleGene(multipleOfThreeWithAtgAndTaa));
         System.out.println(Part1.findSimpleGene(notMultipleOfThreeWithAtgAndTaa));
         System.out.println(Part1.findSimpleGene(random));
+
+        System.out.println("Story by Abby Long".("by"));
+
+//        System.out.println("Testing of twoOccurrences() method:");
+//
+//        System.out.println(Part2.twoOccurrences("by", "Story by Abby Long"));
+//        System.out.println(Part2.twoOccurrences("a", "banana"));
+//        System.out.println(Part2.twoOccurrences("atg", "ctgtatgta"));
     }
 }
