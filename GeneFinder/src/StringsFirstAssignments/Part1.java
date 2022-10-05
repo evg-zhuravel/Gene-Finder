@@ -5,15 +5,15 @@ public class Part1 {
     public static String findSimpleGene(String dna) {
         int startCodonIndex;
         if ((startCodonIndex = dna.indexOf("ATG")) == -1) {
-            return "";
+            dna = "";
         }
         int lastCodonIndex = dna.indexOf("TAA", startCodonIndex + 2);
-        String currGene = dna.substring(startCodonIndex, lastCodonIndex + 3);
-        if (currGene.length() % 3 == 0) {
-            return currGene;
+        if (lastCodonIndex != -1) {
+            dna = dna.substring(startCodonIndex, lastCodonIndex + 3);
         }
-        return "";
+        return dna.length() % 3 == 0 ? dna : "";
     }
+
     public static String findSimpleGene(String dna, String startCodon, String lastCodon) {
         if (Character.isLowerCase(dna.charAt(0))) {
             startCodon = startCodon.toLowerCase();
@@ -22,14 +22,13 @@ public class Part1 {
 
         int startCodonIndex;
         if ((startCodonIndex = dna.indexOf(startCodon)) == -1) {
-            return "";
+            dna = "";
         }
         int lastCodonIndex = dna.indexOf(lastCodon, startCodonIndex + 2);
-        String currGene = dna.substring(startCodonIndex, lastCodonIndex + 3);
-        if (currGene.length() % 3 == 0) {
-            return currGene;
+        if (lastCodonIndex != -1) {
+            dna = dna.substring(startCodonIndex, lastCodonIndex + 3);
         }
-        return "";
+        return dna.length() % 3 == 0 ? dna : "";
     }
 }
 
