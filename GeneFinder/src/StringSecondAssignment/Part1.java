@@ -17,4 +17,19 @@ public class Part1 {
         }
         return stopCodonIndex;
     }
+
+    public static String findGene(String dna) {
+        StringBuilder gene = new StringBuilder();
+        int startCodonIndex = dna.indexOf("ATG");
+        if (startCodonIndex != -1) {
+            String[] stopCodons = {"TAA", "TAG", "TGA"};
+            for (String stopCodon : stopCodons) {
+                int currIndex;
+                if ((currIndex = findStopCodon(dna, startCodonIndex, stopCodon)) > 0 && gene.isEmpty()) {
+                    gene.append(dna, startCodonIndex, currIndex + 3);
+                }
+            }
+        }
+        return gene.toString();
+    }
 }
