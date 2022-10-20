@@ -7,7 +7,7 @@ public class Part1 {
     public static int findStopCodon(String dna, int startIndex, String stopCodon) {
         int stopCodonIndex = 0;
         dna = dna.substring(startIndex);
-        int startCodonIndex = dna.indexOf("ATG", startIndex);
+        int startCodonIndex = dna.indexOf("ATG");
         if (startCodonIndex != -1) {
             while (stopCodonIndex != -1) {
                 stopCodonIndex = dna.indexOf(stopCodon, startCodonIndex);
@@ -21,12 +21,13 @@ public class Part1 {
         return stopCodonIndex;
     }
 
+    //    problem with findGene() !!!
     public static String findGene(String dna) {
         StringBuilder gene = new StringBuilder();
         int startCodonIndex = dna.indexOf("ATG");
         if (startCodonIndex != -1) {
             int firstStopCodonIndex = findMinimalIndex(dna, startCodonIndex, "TAA", "TAG", "TGA");
-            gene.append(dna, startCodonIndex, firstStopCodonIndex + 3);
+            gene.append(dna, startCodonIndex, firstStopCodonIndex + +startCodonIndex + 3);
         }
         return gene.toString();
     }

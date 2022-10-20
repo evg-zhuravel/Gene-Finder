@@ -21,6 +21,10 @@ public class Runner {
         System.out.println(Part2.howMany("GAA", "ATGAACGAATTGAATCGAAGAAGAA")); // 6
         System.out.println(Part2.howMany("AA", "ATAAAA")); // 2
 
-        System.out.println(Part1.countGenes("ATGTAAGATGCCCTAGTATGTTAGTTAATTAA")); // 3
+        System.out.println(Part1.countGenes("AAAATGGTTTGAGATGCCCTAGTATGTTAGTTAATTAA")); // 3
+
+        System.out.println();
+
+        System.out.printf("First found gene is %s", Part1.findGene("AATGCTAACTAGCTGACTAAT"));
     }
 }
