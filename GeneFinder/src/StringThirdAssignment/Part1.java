@@ -40,6 +40,7 @@ public class Part1 {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileUrl))) {
             String dna = reader.readLine();
             getGenesByLength(dna, 9);
+            getGenesByCgRatio(dna, 0.35);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -47,10 +48,22 @@ public class Part1 {
 
     private static void getGenesByLength(String dna, int length) {
         String currGene;
+        int i = 0;
         while (!(currGene = findGene(dna)).isEmpty()) {
-            int i = 1;
             if (currGene.length() > length) {
-                System.out.printf("%d - %s", i++, currGene + '\n');
+                System.out.printf("%d - %s \n", ++i, currGene);
+            }
+            dna = dna.substring(currGene.length());
+        }
+    }
+
+    private static void getGenesByCgRatio(String dna, double ratio) {
+        String currGene;
+        int i = 1;
+        while (!(currGene = findGene(dna)).isEmpty()) {
+            double currRation = cgRatio(currGene);
+            if (currRation > ratio) {
+                System.out.printf("%d - %s with ratio %f \n", ++i, currGene, currRation);
             }
             dna = dna.substring(currGene.length());
         }
