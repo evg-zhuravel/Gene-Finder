@@ -1,5 +1,7 @@
 package StringThirdAssignment;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -32,6 +34,26 @@ public class Part1 {
             }
         }
         return cgRatio / dna.length();
+    }
+
+    public static void processGenes(String fileUrl) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileUrl))) {
+            String dna = reader.readLine();
+            getGenesByLength(dna, 9);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void getGenesByLength(String dna, int length) {
+        String currGene;
+        while (!(currGene = findGene(dna)).isEmpty()) {
+            int i = 1;
+            if (currGene.length() > length) {
+                System.out.printf("%d - %s", i++, currGene + '\n');
+            }
+            dna = dna.substring(currGene.length());
+        }
     }
 }
 

@@ -21,9 +21,9 @@ public class Part1 {
         return stopCodonIndex;
     }
 
-    //    problem with findGene() !!!
     public static String findGene(String dna) {
         StringBuilder gene = new StringBuilder();
+        if (Character.isLowerCase(dna.charAt(0))) dna = dna.toUpperCase();
         int startCodonIndex = dna.indexOf("ATG");
         if (startCodonIndex != -1) {
             int firstStopCodonIndex = findMinimalIndex(dna, startCodonIndex, "TAA", "TAG", "TGA");
