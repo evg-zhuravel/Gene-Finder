@@ -22,6 +22,17 @@ public class Part1 {
             e.printStackTrace();
         }
     }
+
+    public static double cgRatio(String dna) {
+        double cgRatio = 0;
+        for (int i = 0; i < dna.length(); i++) {
+            String currChar = String.valueOf(dna.charAt(i));
+            if (currChar.equalsIgnoreCase("C") || currChar.equalsIgnoreCase("G")) {
+                cgRatio++;
+            }
+        }
+        return cgRatio / dna.length();
+    }
 }
 
 
